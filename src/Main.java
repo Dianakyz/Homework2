@@ -22,14 +22,24 @@ boolean h = b > 5;
         int icecream = 100;
         int egg = 70;
         int cocktail = banana * 5 + milk * 2 + icecream * 2 + egg * 4;
-        System.out.println("Общий вес спорт-завтрака составляет " + cocktail + " грамм.");
+        int grPerKg = 1000;
+        float weighKg = cocktail / (float)grPerKg;
+                System.out.println("Общий вес спорт-завтрака составляет " + weighKg + " кг.");
 
         // Задача 4
-        int weight = 7000;
+        int gramm = 1000;
+        int weight = 7 * gramm;
         int min = 250;
         int max = 500;
+        int weightMin = weight / min;
+        double remaindermin = weight % min;
+        int weightMax = weight / max;
+        double remainderMax = weight % max;
         System.out.println("Если спортсмен будет терять по 250 грамм ежедневно, то уйдет " + (weight / min) + " дней на похудение.");
         System.out.println("Если спортсмен будет терять по 500 грамм ежедневно, то уйдет " + (weight / max) + " дней на похудение.");
+        System.out.println("В среднем уйдет " + ((weightMin + weightMax) / 2) + " день на похудение.");
+        System.out.println("Операция остатка: " + remainderMax + " " + remaindermin);
+
 
         // Задача 5
             int Masha = 67_760;
@@ -44,10 +54,30 @@ boolean h = b > 5;
             int DenisYearNow = DenisNow * 12;
             System.out.println("Теперь зарплата Дениса составляет " + DenisNow + " рубля. Годовой доход вырос на " + (DenisYearNow - DenisYear) + " рублей.");
 
-            int Christina = 76230;
+            int Christina = 76_230;
             int ChristinaNow = Christina + (Christina * 10 / 100);
             int ChristinaYear = Christina * 12;
             int ChristinaYearNow = ChristinaNow * 12;
             System.out.println("Теперь зарплата Кристины составляет " + ChristinaNow + " рублей. Годовой доход вырос на " + (ChristinaYearNow - ChristinaYear) + " рублей.");
+
+            // Задача 5 (другой вариант решения)
+        int percent = 10;
+        double multiplayer = percent / (100 * 1.0);
+        int MashaSalary = 67_760;
+        int DenisSalary = 83_890;
+        int ChristinaSalary = 76_230;
+
+        int MashaNewSalary = (int) (MashaSalary + (MashaSalary * multiplayer));
+        int DenisNewSalary = (int) (DenisSalary + (DenisSalary * multiplayer));
+        int ChristinaNewSalary = (int) (ChristinaSalary + (ChristinaSalary * multiplayer));
+
+        int MashaDifference = (MashaNewSalary - MashaSalary) * 12;
+        int DenisDifference = (DenisNewSalary - DenisSalary) * 12;
+        int ChristinaDifference = (ChristinaNewSalary - ChristinaSalary) * 12;
+
+        System.out.println("Теперь зарплата Маши составляет " + MashaNewSalary + " рублей. Годовой доход вырос на " + MashaDifference + " рублей.");
+        System.out.println("Теперь зарплата Дениса составляет " + DenisNewSalary + " рублей. Годовой доход вырос на " + DenisDifference + " рублей.");
+        System.out.println("Теперь зарплата Кристины составляет " + ChristinaNewSalary + " рублей. Годовой доход вырос на " + ChristinaDifference + " рублей.");
     }
+
 }
